@@ -87,5 +87,10 @@ Then install the app and procced with installation steps. After that you have to
 
 ## creating msi app (windows)
 ```bash
-jpackage --input "build" --name "Meu App" --main-jar "app.jar" --main-class "my_app.Launch" --dest "dist" --type "msi" --runtime-image "build\runtime" --java-options "-Djava.library.path=$APPDIR\bin" --icon "src\main\resources\assets\app_ico.ico" 
+jpackage --input "build" --name "Meu App" --main-jar "app.jar" --main-class "my_app.Launch" --dest "dist" --type "msi" --runtime-image "build\runtime" --java-options '"-Djava.library.path=$APPDIR\bin"' --icon "src\main\resources\assets\app_ico.ico"
+```
+
+## creating msi app (windows) with shortcuts
+```bash
+jpackage --input "build" --name "Meu App" --main-jar "app.jar" --main-class "my_app.Launch" --dest "dist" --type "msi" --runtime-image "build\runtime" --java-options '"-Djava.library.path=$APPDIR\bin"' --icon "src\main\resources\assets\app_ico.ico" --win-menu --win-shortcut
 ```
