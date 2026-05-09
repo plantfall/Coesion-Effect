@@ -21,8 +21,11 @@ Initialize your own project:
 1. Clone this project
 
 ```bash
-git clone https://github.com/plantfall/Coesion-Effect.git
+git clone https://github.com/eliezer-dev-software-enginner/coesion-effect.git
 ```
+
+Or download the release app:
+[Download](https://github.com/eliezer-dev-software-enginner/coesion-effect/releases/edit/v1.0.2)
 
 ## Building your App
 
@@ -32,7 +35,7 @@ mvn clean package
 
 ## Distributing Your App
 
-After you have builded it you can distribute easily:
+After you have built it you can distribute easily:
 
 1. Open your terminal and run create-installer.bat
 
@@ -63,3 +66,26 @@ Make sure you have the following installed for building purposes:
 
 Then install the app and procced with installation steps. After that you have to set the variable path.
 ![wix_tollset_path](https://github.com/user-attachments/assets/d92cc6ec-fdd9-4eac-bb82-1c878fa66937)
+
+
+## Helping
+
+## vm arguments for run application:
+```bash
+--module-path ./java_fx_modules/windows-25.0.1/lib --add-modules javafx.controls,javafx.graphics -Dprism.verbose=true --enable-native-access=javafx.graphics
+```
+
+## creating java runtime
+```bash
+--module-path ./java_fx_modules/windows-25.0.1/lib --add-modules javafx.controls,javafx.graphics -Dprism.verbose=true --enable-native-access=javafx.graphics
+```
+
+## testing
+```bash
+.\build\runtime\bin\java.exe "-Djava.library.path=build\bin" -cp "build\app.jar" my_app.Launch
+```
+
+## creating msi app (windows)
+```bash
+jpackage --input "build" --name "Meu App" --main-jar "app.jar" --main-class "my_app.Launch" --dest "dist" --type "msi" --runtime-image "build\runtime" --java-options "-Djava.library.path=$APPDIR\bin" --icon "src\main\resources\assets\app_ico.ico" 
+```
